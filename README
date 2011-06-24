@@ -1,0 +1,20 @@
+All code written in Python so the ``run'' file is the source file. Other
+files are:
+
+	comb.py - does card combinations
+	eval.py - evaluates slot fields
+	game.py - some general routines
+	target_finder.py - code to find next slot to attack
+
+The strategy is following:
+
+	- try to attack fast at the very beginning the most ``important''
+	slot of the opponent; importance is calculated from the
+	number of applications in slot's field
+	- zombify it to destroy any prepared combination; zombie function
+	then attacks opponent's slot 0
+	- build general attack and help spells
+	- find the next ``important'' slot and attack in a loop;
+	first attack slot which number is more easy to build
+	- periodically check if our slots are alive, otherwise revive
+	them
